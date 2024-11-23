@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import "./NavItems.css";
 
 const NavItems = () => {
     const [menuToggle, setMenuToggle] = useState(false);
@@ -17,6 +18,13 @@ const NavItems = () => {
                         <li><Link to="/pages">Pages</Link></li>
                         <li><Link to="/contact">Contact</Link></li>
                     </ul>
+                </div>
+
+                {/* Mobile Menu */}
+                <div onClick={() => setMenuToggle(!menuToggle)} className={`header-bar d-md-none ${menuToggle ? 'active' : ''}`}>
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
 
                 {/* Mobile Menu */}

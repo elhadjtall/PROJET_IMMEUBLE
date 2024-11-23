@@ -1,0 +1,116 @@
+/* Styles généraux pour le header */
+.header-section {
+    position: relative;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+/* Header fixé après défilement */
+.header-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Zone du menu */
+.menu-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+/* Liste des liens */
+.lab-ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.lab-ul li {
+    font-size: 1rem;
+}
+
+.lab-ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.lab-ul li a:hover {
+    color: #007bff;
+}
+
+/* Menu mobile */
+.header-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.header-bar span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #333;
+    transition: all 0.3s ease;
+}
+
+/* Activer le menu mobile */
+.header-bar.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.header-bar.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.header-bar.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Réseaux sociaux pour mobile */
+.ellepsis-bar {
+    display: none;
+    cursor: pointer;
+}
+
+.ellepsis-bar i {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+/* Responsive : Activer pour mobile */
+@media (max-width: 768px) {
+    .lab-ul {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #fff;
+        padding: 1rem;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        display: none;
+    }
+
+    .lab-ul.active {
+        display: block;
+    }
+
+    .header-bar {
+        display: block;
+    }
+
+    .ellepsis-bar {
+        display: block;
+    }
+}
